@@ -1,0 +1,1 @@
+{"version":3,"file":"LoggingErrorsMongoDbPersistence.js","sourceRoot":"","sources":["../../../src/persistence/LoggingErrorsMongoDbPersistence.ts"],"names":[],"mappings":";;;AAAA,2EAAwE;AAExE,MAAa,+BAAgC,SAAQ,qDAAyB;IAI1E;QACI,KAAK,CAAC,QAAQ,CAAC,CAAC;QAHb,gBAAW,GAAW,QAAQ,CAAC;IAItC,CAAC;CACJ;AAPD,0EAOC"}

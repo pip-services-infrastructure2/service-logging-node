@@ -1,0 +1,62 @@
+{
+    "name": "service-logging-node",
+    "version": "1.0.0",
+    "author": "Conceptual Vision Consulting LLC",
+    "description": "Distributed trace logging microservice in Node.js / ES2017",
+    "contributors": [
+        {
+            "name": "Sergey Seroukhov",
+            "email": "seroukhov@gmail.com"
+        }
+    ],
+    "main": "./obj/src/index.js",
+    "typings": "./obj/src/index.d.ts",
+    "keywords": [
+        "pip.services",
+        "traces",
+        "logging",
+        "microservice"
+    ],
+    "noAnalyze": true,
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@github.com:pip-services-infrastructure2/service-logging-node.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "private": false,
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "launch": "node ./bin/run.js",
+        "relaunch": "tsc && node ./bin/run.js",
+        "test": "mocha -t 5000 -R spec -u tdd --recursive ./obj/test",
+        "retest": "tsc && mocha -t 5000 -R spec -u tdd --recursive ./obj/test",
+        "benchmark": "node ./obj/benchmark/run.js",
+        "rebenchmark": "tsc && matcha -R clean -I tdd ./obj/benchmark/run.js"
+    },
+    "dependencies": {
+        "pip-services3-aws-nodex": "^1.1.*",
+        "pip-services3-commons-nodex": "^1.0.*",
+        "pip-services3-components-nodex": "^1.4.*",
+        "pip-services3-container-nodex": "^1.0.*",
+        "pip-services3-data-nodex": "^1.0.*",
+        "pip-services3-mongodb-nodex": "^1.0.*",
+        "pip-services3-rpc-nodex": "^1.2.*",
+        "pip-services3-swagger-nodex": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/async": "^2.0.0",
+        "@types/chai": "*",
+        "@types/lodash": "^4.0.0",
+        "@types/mocha": "*",
+        "@types/mongodb": "^2.1.38",
+        "@types/node": "*",
+        "chai": "*",
+        "mocha": "*",
+        "pip-benchmark-node": "^2.0.1",
+        "restify": "^4.3.0"
+    }
+}

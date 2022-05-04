@@ -1,0 +1,34 @@
+import { ConfigParams, IOpenable } from 'pip-services3-commons-nodex';
+import { IConfigurable } from 'pip-services3-commons-nodex';
+import { IReferences } from 'pip-services3-commons-nodex';
+import { IReferenceable } from 'pip-services3-commons-nodex';
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
+import { DataPage } from 'pip-services3-commons-nodex';
+import { CommandSet } from 'pip-services3-commons-nodex';
+import { ICommandable } from 'pip-services3-commons-nodex';
+import { LogMessageV1 } from '../data/version1/LogMessageV1';
+import { ILoggingController } from './ILoggingController';
+export declare class LoggingController implements ILoggingController, ICommandable, IConfigurable, IReferenceable, IOpenable {
+    private _dependencyResolver;
+    private _messagesPersistence;
+    private _errorsPersistence;
+    private _commandSet;
+    private _expireCleanupTimeout;
+    private _expireLogsTimeout;
+    private _expireErrorsTimeout;
+    private _interval;
+    constructor();
+    getCommandSet(): CommandSet;
+    configure(config: ConfigParams): void;
+    setReferences(references: IReferences): void;
+    isOpen(): boolean;
+    open(correlationId: string): Promise<void>;
+    close(correlationId: string): Promise<void>;
+    writeMessage(correlationId: string, message: LogMessageV1): Promise<LogMessageV1>;
+    writeMessages(correlationId: string, messages: LogMessageV1[]): Promise<void>;
+    readMessages(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<LogMessageV1>>;
+    readErrors(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<LogMessageV1>>;
+    clear(correlationId: string): Promise<void>;
+    deleteExpired(correlationId: string): Promise<void>;
+}
