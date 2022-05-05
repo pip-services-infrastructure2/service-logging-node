@@ -49,9 +49,9 @@ class LoggingController {
             if (this._interval != null) {
                 clearInterval(this._interval);
             }
-            this._interval = setInterval(() => {
-                this.deleteExpired(correlationId);
-            }, 1000 * 60 * this._expireCleanupTimeout);
+            this._interval = setInterval(() => __awaiter(this, void 0, void 0, function* () {
+                yield this.deleteExpired(correlationId);
+            }), 1000 * 60 * this._expireCleanupTimeout);
         });
     }
     close(correlationId) {

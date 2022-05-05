@@ -62,8 +62,8 @@ export class LoggingController
             clearInterval(this._interval);
         }
 
-        this._interval = setInterval(() => {
-            this.deleteExpired(correlationId);
+        this._interval = setInterval(async () => {
+            await this.deleteExpired(correlationId);
         }, 1000 * 60 * this._expireCleanupTimeout);
     }
 
