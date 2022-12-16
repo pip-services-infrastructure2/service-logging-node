@@ -7,7 +7,7 @@ const LoggingMemoryPersistence_1 = require("../persistence/LoggingMemoryPersiste
 const LoggingMessagesMongoDbPersistence_1 = require("../persistence/LoggingMessagesMongoDbPersistence");
 const LoggingErrorsMongoDbPersistence_1 = require("../persistence/LoggingErrorsMongoDbPersistence");
 const LoggingController_1 = require("../logic/LoggingController");
-const LoggingHttpServiceV1_1 = require("../services/version1/LoggingHttpServiceV1");
+const LoggingCommandableHttpServiceV1_1 = require("../services/version1/LoggingCommandableHttpServiceV1");
 class LoggingServiceFactory extends pip_services3_components_nodex_1.Factory {
     constructor() {
         super();
@@ -16,7 +16,7 @@ class LoggingServiceFactory extends pip_services3_components_nodex_1.Factory {
         this.registerAsType(LoggingServiceFactory.LoggingMessagesMongoDbPersistenceDescriptor, LoggingMessagesMongoDbPersistence_1.LoggingMessagesMongoDbPersistence);
         this.registerAsType(LoggingServiceFactory.LoggingErrorsMongoDbPersistenceDescriptor, LoggingErrorsMongoDbPersistence_1.LoggingErrorsMongoDbPersistence);
         this.registerAsType(LoggingServiceFactory.ControllerDescriptor, LoggingController_1.LoggingController);
-        this.registerAsType(LoggingServiceFactory.HttpServiceDescriptor, LoggingHttpServiceV1_1.LoggingHttpServiceV1);
+        this.registerAsType(LoggingServiceFactory.HttpServiceDescriptor, LoggingCommandableHttpServiceV1_1.LoggingCommandableHttpServiceV1);
     }
 }
 exports.LoggingServiceFactory = LoggingServiceFactory;
@@ -26,5 +26,5 @@ LoggingServiceFactory.LoggingErrorsMemoryPersistenceDescriptor = new pip_service
 LoggingServiceFactory.LoggingMessagesMongoDbPersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-logging", "persistence-messages", "mongodb", "*", "1.0");
 LoggingServiceFactory.LoggingErrorsMongoDbPersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-logging", "persistence-errors", "mongodb", "*", "1.0");
 LoggingServiceFactory.ControllerDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-logging", "controller", "default", "*", "1.0");
-LoggingServiceFactory.HttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-logging", "service", "http", "*", "1.0");
+LoggingServiceFactory.HttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-logging", "service", "commandable-http", "*", "1.0");
 //# sourceMappingURL=LoggingServiceFactory.js.map

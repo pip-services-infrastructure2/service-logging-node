@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoggingHttpServiceV1 = void 0;
-var LoggingHttpServiceV1_1 = require("./LoggingHttpServiceV1");
-Object.defineProperty(exports, "LoggingHttpServiceV1", { enumerable: true, get: function () { return LoggingHttpServiceV1_1.LoggingHttpServiceV1; } });
+exports.LoggingCommandableHttpServiceV1 = void 0;
+var LoggingCommandableHttpServiceV1_1 = require("./LoggingCommandableHttpServiceV1");
+Object.defineProperty(exports, "LoggingCommandableHttpServiceV1", { enumerable: true, get: function () { return LoggingCommandableHttpServiceV1_1.LoggingCommandableHttpServiceV1; } });
 //# sourceMappingURL=index.js.map

@@ -1,1 +1,1 @@
-export { LoggingHttpServiceV1 } from './LoggingHttpServiceV1';
+export { LoggingCommandableHttpServiceV1 } from './LoggingCommandableHttpServiceV1';
